@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "37228662-d81129ae-a6a8-4825-bc29-ce44d49863a2",
+		"name": "E-Moda Non-prod",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.getAllModas",
+			"id": "37228662-5eb056a8-eb7a-466c-a0ea-7f90aba86b4c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "{{transaction_id}}",
+						"type": "text"
+					},
+					{
+						"key": "reqDatetime",
+						"value": "{{req_datetime}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{mulesoft_url}}/api/exp/grc/v1/emoda/modas?companyId=GC",
+					"host": [
+						"{{mulesoft_url}}"
+					],
+					"path": [
+						"api",
+						"exp",
+						"grc",
+						"v1",
+						"emoda",
+						"modas"
+					],
+					"query": [
+						{
+							"key": "companyId",
+							"value": "GC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.getModa",
+			"id": "37228662-34c08c5d-b046-427e-8ae5-6d8fb03c7924",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "{{transaction_id}}",
+						"type": "text"
+					},
+					{
+						"key": "reqDatetime",
+						"value": "{{req_datetime}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{mulesoft_url}}/api/exp/grc/v1/emoda/modas/GC/69",
+					"host": [
+						"{{mulesoft_url}}"
+					],
+					"path": [
+						"api",
+						"exp",
+						"grc",
+						"v1",
+						"emoda",
+						"modas",
+						"GC",
+						"69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.getModaVersion",
+			"id": "37228662-ec665bca-0198-44da-8982-685f456e6140",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "{{transaction_id}}",
+						"type": "text"
+					},
+					{
+						"key": "reqDatetime",
+						"value": "{{req_datetime}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{mulesoft_url}}/api/exp/grc/v1/emoda/modas/GC/69/42",
+					"host": [
+						"{{mulesoft_url}}"
+					],
+					"path": [
+						"api",
+						"exp",
+						"grc",
+						"v1",
+						"emoda",
+						"modas",
+						"GC",
+						"69",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.resolveModa",
+			"id": "37228662-7896ca2a-48ad-402b-9725-7759c167f4b4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "{{transaction_id}}",
+						"type": "text"
+					},
+					{
+						"key": "reqDatetime",
+						"value": "{{req_datetime}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"companyId\": \"GC\",\n  \"modaId\": 46,\n  \"employeeId\": \"26000060\",\n  \"parameters\": [\n    {\n      \"unit\": \"THB\",\n      \"value\": 1200000\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mulesoft_url}}/api/exp/grc/v1/emoda/modas/resolveModa",
+					"host": [
+						"{{mulesoft_url}}"
+					],
+					"path": [
+						"api",
+						"exp",
+						"grc",
+						"v1",
+						"emoda",
+						"modas",
+						"resolveModa"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{clientsecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{clientId}}",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenName",
+				"value": "SAPAPIM",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "https://graph.microsoft.com/.default",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://login.microsoftonline.com/d303db8c-d034-4010-a7ee-c47bebf5bca3/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://login.microsoftonline.com/dc6df0e3-1692-4482-aa55-729e0a5e8361/oauth2/v2.0/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e76f0f7e-bedf-4f83-9b59-3676a41e83c9",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// ใน Pre-request Script\r",
+					"const now = new Date();\r",
+					"\r",
+					"// ISO format\r",
+					"pm.environment.set(\"req_datetime\", now.toISOString());\r",
+					"\r",
+					"// ISO without milliseconds\r",
+					"pm.environment.set(\"req_datetime_simple\", now.toISOString().split('.')[0] + 'Z');\r",
+					"\r",
+					"// Custom format if needed\r",
+					"pm.environment.set(\"req_timestamp\", now.getTime());\r",
+					"\r",
+					"\r",
+					"// Generate UUID v4\r",
+					"function generateUUID() {\r",
+					"    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\r",
+					"        var r = Math.random() * 16 | 0,\r",
+					"            v = c == 'x' ? r : (r & 0x3 | 0x8);\r",
+					"        return v.toString(16);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"pm.environment.set(\"transaction_id\", generateUUID());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "20ac4330-9979-43b6-9127-df0cc74b5b51",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
